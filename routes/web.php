@@ -12,12 +12,12 @@ Route::get(uri:'/hello', action: function (): array {
     return ['Hello' => 'world'];
 });
 
-Route::get(uri:'/jobs', action: function (): array {
+Route::get(uri:'/jobs', action: function () {
     return Job::all();
 });
 
-Route::get(uri:'/jobs/{id}', action: function ($id): array {
-    return Job::find($id);
+Route::get(uri:'/jobs/{id}', action: function ($id) {
+    return Job::findOrFail($id);
 });
 
 Route::get('/dashboard', function () {
